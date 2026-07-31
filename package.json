@@ -52,6 +52,8 @@
     "test": "react-app-rewired test",
     "test:contracts": "node --test \"server/contracts/__tests__/*.test.js\"",
     "server": "node server/server.js",
+    "ledger": "node server/ledger-server.js",
+    "dev:ledger": "concurrently \"node server/ledger-server.js\" \"react-app-rewired start\"",
     "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
