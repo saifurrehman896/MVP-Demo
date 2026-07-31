@@ -1,2 +1,11 @@
 /node_modules
 package-lock.json
+
+# Build output
+/build
+
+# Secrets — .config.env holds real API keys. Only the example is tracked.
+server/config/.config.env
+*.local.env
+.env
+.env.local

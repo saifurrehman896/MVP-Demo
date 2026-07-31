@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Properties from './pages/Properties';
 import PropertyDetail from './pages/PropertyDetail';
 import Property3D from './pages/Property3D';
+import TokenLedger from './pages/TokenLedger';
 import About from './pages/About';
 import FAQ from './pages/FAQ';
 import Privacy from './pages/Privacy';
@@ -23,6 +24,7 @@ function App() {
             <Route path="/properties" element={<Properties />} />
             <Route path="/properties/:id" element={<PropertyDetail />} />
             <Route path="/property-3d" element={<Property3D />} />
+            <Route path="/token-ledger" element={<TokenLedger />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/faq" element={<FAQ />} />

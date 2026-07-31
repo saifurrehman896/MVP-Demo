@@ -8,6 +8,7 @@ function Navbar() {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Properties', href: '/properties' },
+    { name: 'Token Ledger', href: '/token-ledger' },
     { name: 'About', href: '/about' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Blog', href: '/blog' },

@@ -63,6 +63,46 @@ RentVerse is a demo platform showcasing a next-generation real-estate experience
 - Author profiles  
 - Social sharing options  
 
+### 5. 🪙 Token Ledger (`/token-ledger`)
+- Live ERC-20-style token contract running **in-process — no blockchain dependency**  
+- Mint, transfer, approve, transferFrom and burn, each with a real receipt  
+- Block height, gas usage, event logs and revert reasons  
+- Balances held as BigInt base units, so token math never touches a float  
+
+---
+
+## 🪙 Token Ledger API
+
+A working token contract and REST API that models smart-contract behaviour
+without a node, a wallet or an RPC endpoint. The API talks to the contract
+through a `read`/`write` adapter, so pointing RentVerse at a real deployed
+ERC-20 later is a one-file change with no route or UI churn.
+
+```bash
+# balances
+curl -s http://127.0.0.1:3099/api/ledger/balance/treasury
+
+# mint 5000 RVT to alice
+curl -s -X POST http://127.0.0.1:3099/api/ledger/mint \
+  -H 'Content-Type: application/json' \
+  -d '{"to":"alice","amount":"5000"}'
+
+# transfer
+curl -s -X POST http://127.0.0.1:3099/api/ledger/transfer \
+  -H 'Content-Type: application/json' \
+  -d '{"from":"alice","to":"bob","amount":"1250.5"}'
+```
+
+Full endpoint reference, design notes and configuration:
+[`server/contracts/README.md`](server/contracts/README.md).
+The Solidity specification it mirrors: [`contracts/TokenLedger.sol`](contracts/TokenLedger.sol).
+
+Run the contract test suite:
+
+```
+   npm run test:contracts
+```
+
 ---
 
 ## 🧱 Development Guidelines
